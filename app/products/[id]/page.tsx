@@ -9,14 +9,14 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 
 type Props = {
-  params: Promise<{ id: string }>;
-  searchParams?: Record<string, string | string[]>;
+  params: { id: string };
+
 };
 
 
-const ProductDetails = async ({ params, searchParams }: Props) => {
-  const resolvedParams = await params;
-  const { id } =  resolvedParams;
+const ProductDetails = async ({ params }: Props) => {
+  
+  const { id } =  await params;
 
   const product: Product = await getProductById(id);
   
