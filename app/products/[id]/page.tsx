@@ -9,10 +9,11 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 
 type Props = {
-  params: { id: string }
-}
+  params: { id: string };
+  searchParams?: Record<string, string | string[]>;
+};
 
-const ProductDetails = async ({ params }: Props) => {
+const ProductDetails = async ({ params, searchParams }: Props) => {
 
   const { id } =  params;
 
